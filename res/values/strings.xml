@@ -3,6 +3,7 @@
 
     <string name="app_name">OjaiList</string>
     <string name="action_settings">Settings</string>
+    <string name="empty_list">No items in list</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
