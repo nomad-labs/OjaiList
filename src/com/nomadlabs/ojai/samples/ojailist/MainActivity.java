@@ -2,8 +2,9 @@ package com.nomadlabs.ojai.samples.ojailist;
 
 import java.util.ArrayList;
 
+import com.nomadlabs.ojai.client.ScanActivity;
+
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ScanActivity {
 
 	ArrayAdapter<String> adapter;
 	ArrayList<String> listItems;
@@ -56,6 +57,14 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	@Override
+	public void onScan(String data, Bundle extras) {
+		super.onScan(data, extras);
+		if (data != "") {
+			addStringToList(data);
+		}
+	}
+
 	private void addStringToList(String item) {
 		listItems.add(item);
 		adapter.notifyDataSetChanged();
